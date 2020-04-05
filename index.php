@@ -1,15 +1,8 @@
-<?php
-include 'configs/dbconnect.php';
-?>
-
-
 <!DOCTYPE html>
 <html>
 
 <?php include 'globals/header.php' ?>
-
-<p>Section Area</p>
-
+<?php include 'login.php' ?>
 <?php include 'globals/footer.php' ?>
 
 </html>

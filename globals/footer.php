@@ -1,5 +1,12 @@
-<div class="">
-  <h5> Copyright 2020 EV </h5>
-</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> EV</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
