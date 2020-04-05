@@ -1,32 +1,61 @@
 <?php
-include 'configs/dbconnect.php';
+require_once('configs/cfg.php');
 
-$username = '';
-$password = '';
-
+session_start();
 ?>
 
+<!DOCTYPE html>
+<html>
 
-<div class="login-form">
-  <form action="options.php" method="POST">
-    <h2 class="text-center">Admin Log in</h2>
-    <div class="form-group">
-      <input type="text" class="form-control" value="<?php echo htmlspecialchars($username) ?>" placeholder="Username" required="required">
+<?php include 'globals/header.php' ?>
+
+<div class="container">
+  <form action="" method="post" name="Login_Form" class="form-signin">
+    <h2 class="form-signin-heading">Admin sign in</h2>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input name="Username" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
     </div>
-    <div class="form-group">
-      <input type="password" class="form-control" value="<?php echo htmlspecialchars($password) ?>" placeholder="Password" required="required">
-    </div>
-    <div class="form-group">
-      <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block">
-    </div>
-    <!--
-    <div class="clearfix">
-      <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-      <a href="#" class="pull-right">Forgot Password?</a>
-    </div>
--->
+    <button name="Submit" value="Login" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    <?php
+
+    /* Check if login form has been submitted */
+    if (isset($_POST['Submit'])) {
+
+      // Rudimentary hash check
+      $result = password_verify($_POST['Password'], $Password);
+
+      /* Check if form's username and password matches */
+      if (($_POST['Username'] == $Username) && ($result === true)) {
+
+        /* Success: Set session variables and redirect to protected page */
+        $_SESSION['Username'] = $Username;
+
+        $_SESSION['Active'] = true;
+        header("location:index.php");
+        exit;
+      } else {
+    ?>
+        <!-- Show an error alert -->
+        &nbsp;
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Warning!</strong> Incorrect information.
+        </div>
+    <?php
+      }
+    }
+    ?>
+
   </form>
-  <!--
-  <p class="text-center"><a href="#">Create an Account</a></p>
--->
 </div>
+
+<?php include 'globals/footer.php' ?>
+
+</html>

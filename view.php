@@ -16,22 +16,9 @@ mysqli_free_result($result);
 
 // close connection
 mysqli_close($conn);
-
-
-
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<?php include 'globals/header.php' ?>
 
 <?php foreach ($students as $student) : ?>
-
   <h6><?php echo htmlspecialchars($student['firstName']); ?></h6>
-
 <?php endforeach; ?>
-
-<?php include 'globals/footer.php' ?>
-
-</html>

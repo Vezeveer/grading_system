@@ -1,8 +1,22 @@
+<?php
+session_start();
+if ($_SESSION['Active'] == false) {
+  header("location:login.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <?php include 'globals/header.php' ?>
-<?php include 'login.php' ?>
+
+<div class="jumbotron">
+
+  <?php include 'view.php' ?>
+
+</div>
+
 <?php include 'globals/footer.php' ?>
 
 </html>
