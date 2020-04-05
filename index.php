@@ -1,3 +1,8 @@
+<?php
+include 'configs/dbconnect.php';
+?>
+
+
 <!DOCTYPE html>
 <html>
 
