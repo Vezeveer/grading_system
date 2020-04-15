@@ -45,6 +45,7 @@ mysqli_close($conn);
               <div class="col-md-6"><?php echo "<a href=delete.php?delete=true&id=" . $student['id'] . " onClick=\"return confirm('are you sure you want to delete??');\">delete</a>" ?></div>
               <div class="col-md-6"><?php echo "<a href=\"modify.php?
               id=" . $student['id'] . "&
+              student_id=" . $student['student_id'] . "&
               firstName=" . $student['firstName'] . "&
               lastName=" . $student['lastName'] . "\"
               >modify</a>" ?></div>
