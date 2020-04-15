@@ -13,7 +13,7 @@ if ($_SESSION['Active'] == false) {
 
 <div class="jumbotron">
 
-  <?php include 'view.php' ?>
+  <?php include 'students.php' ?>
 
 </div>
 
