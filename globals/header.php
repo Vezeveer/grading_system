@@ -28,8 +28,6 @@
         if (isset($_SESSION['Active'])) : ?>
           <li <?php if ($_SERVER['REQUEST_URI'] == "/projectGrades/grading_system/index.php") : ?> class="active" <?php endif ?>><a href="index.php">Home</a></li>
           <li <?php if ($_SERVER['REQUEST_URI'] == "/projectGrades/grading_system/create.php") : ?> class="active" <?php endif ?>><a href="create.php">Add Student</a></li>
-          <li><a href="#">Delete</a></li>
-          <li><a href="#">Modify</a></li>
           <li><a class="bg-success" href="logout.php" role="button">Log out</a></li>
         <?php endif ?>
       </ul>
